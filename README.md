@@ -11,7 +11,7 @@ This Repo currently provisions a GKE cluster in the cloud and tests access to a 
 brew install --cask google-cloud-sdk
 ```
 
- ### Initialize the CLI, you must know the account details before doing this step (Project ID, region etc)
+ ### Initialize the CLI
 
 
 ```sh
