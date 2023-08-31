@@ -6,15 +6,17 @@ This Repo currently provisions a GKE cluster in the cloud and tests access to a 
 
 ### Install G-Cloud
 
-    ```sh
-    brew install --cask google-cloud-sdk
-    ```
+ 
+```sh
+brew install --cask google-cloud-sdk
+```
 
  ### Initialize the CLI, you must know the account details before doing this step (Project ID, region etc)
 
-    ```sh 
-    gcloud init
-    ```
+
+```sh
+gcloud init
+```
 
 ### Add your account to the Application Default Credentials (ADC). This will allow Terraform to access these credentials to provision resources on GCloud. 
 
