@@ -31,6 +31,14 @@ gcloud auth application-default login
 
 ## Installation
 
+First create a terraform.tfvars file that will hold your project details. Past the following contents and amend as needed:
+
+```go
+project_id = "PROJECT_ID"
+region     = "REGION"
+zone       = "ZONE"
+```
+
 Run `terraform apply` and wait for the infrastructure to be provisioned. 
 
 Once that has been finished execute the shell script `ApplyManifests.sh`, this will update your KubeConfig and spin up a basic ingress with a flask web app to test connectivity to pods on the cluster using your local machine. 
