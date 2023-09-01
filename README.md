@@ -38,7 +38,7 @@ Once that has been finished execute the shell script `ApplyManifests.sh`, this w
 
 You should now have access to the Cluster from the command line and you can use Kubectl to interact with it. 
 
-
+To validate a successfull connection you can navigate to your Cluster via the GCP UI. Go to Kubernetes Engine > Services & Ingress > ingress > Select the ingress > Select the link on the Routes(via IP)
 
 
 ## Troubleshooting: 
