@@ -4,7 +4,7 @@ resource "random_id" "bucket_prefix" {
 
 resource "google_storage_bucket" "terraform-bucket-for-state" {
   name                        = "tf-state-shahbaz"
-  location                    = "us-central1"
+  location                    = var.region
   public_access_prevention    = "enforced"
   uniform_bucket_level_access = true
   versioning {
