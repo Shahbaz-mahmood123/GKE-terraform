@@ -49,7 +49,7 @@ To validate a successfull connection you can navigate to your Cluster via the GC
 
 
 ## Troubleshooting: 
-When continously deleting and recreating a cluster the SSD_TOTAL_GB for the compute engine does not seem to be released immediately after deleting resources. You may encounter this error from time to time if you continously create and delete resources suck as clusters, nodes, sql databases etc:
+When continously deleting and recreating a cluster the SSD_TOTAL_GB for the compute engine does not seem to be released immediately after deleting resources. You may encounter this error from time to time if you continously create and delete resources suck as clusters, nodes, sql databases etc. You may need to wait until googles quotas refreshes the next day. 
 
 ```sh 
 │ Error: googleapi: Error 403: Insufficient regional quota to satisfy request: resource "SSD_TOTAL_GB": request requires '300.0' and is short '300.0'. project has a quota of '500.0' with '0.0' available. View and manage quotas at https://console.cloud.google.com/iam-admin/quotas?usage=USED&project=gke-testing-396115.
