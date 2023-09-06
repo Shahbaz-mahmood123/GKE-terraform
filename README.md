@@ -24,6 +24,12 @@ gcloud init
 gcloud auth application-default login
 ```
 
+### Install the GKE auth pluging
+Run this command to install the GKE auth plugin:
+```sh 
+gcloud components install gke-gcloud-auth-plugin
+```
+More information here: https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
 
 ### Also ensure you have cloned the repo, initialized terraform and have kubectl installed. 
 
@@ -41,7 +47,7 @@ zone       = "ZONE"
 
 Run `terraform apply` and wait for the infrastructure to be provisioned. 
 
-Once that has been finished execute the shell script `ApplyManifests.sh`, this will update your KubeConfig and spin up a basic ingress with a flask web app to test connectivity to pods on the cluster using your local machine. 
+Once that has been finished execute the shell script `ApplyManifests.sh`, this will update your KubeConfig and spin up a basic ingress with a flask web app to test connectivity to pods on the cluster using your local machine(Currently using HTTP). 
 
 You should now have access to the Cluster from the command line and you can use Kubectl to interact with it. 
 
@@ -49,7 +55,9 @@ To validate a successfull connection you can navigate to your Cluster via the GC
 
 
 ## Troubleshooting: 
-When continously deleting and recreating a cluster the SSD_TOTAL_GB for the compute engine does not seem to be released immediately after deleting resources. You may encounter this error from time to time if you continously create and delete resources suck as clusters, nodes, sql databases etc. You may need to wait until googles quotas refreshes the next day. 
+
+### Ran out of SSD_TOTAL_GB quota
+When continously deleting and recreating a cluster the SSD_TOTAL_GB for the compute engine does not seem to be released immediately after deleting resources(This is on a trial account). You may encounter this error from time to time if you continously create and delete resources suck as clusters, nodes, sql databases etc. You may need to wait until googles quotas refreshes the next day. 
 
 ```sh 
 │ Error: googleapi: Error 403: Insufficient regional quota to satisfy request: resource "SSD_TOTAL_GB": request requires '300.0' and is short '300.0'. project has a quota of '500.0' with '0.0' available. View and manage quotas at https://console.cloud.google.com/iam-admin/quotas?usage=USED&project=gke-testing-396115.
@@ -69,3 +77,9 @@ When continously deleting and recreating a cluster the SSD_TOTAL_GB for the comp
 ╵
 ```
 ![Alt text](quotas.png)
+
+
+## TODO
+1. Configure HTTPS ingress
+2. Tower deployment to GKE
+3. Once Tower is completed possibly, automate creation of CE's, orgs and workspaces.
