@@ -53,6 +53,15 @@ You should now have access to the Cluster from the command line and you can use 
 
 To validate a successfull connection you can navigate to your Cluster via the GCP UI. Go to Kubernetes Engine > Services & Ingress > ingress > Select the ingress > Select the link on the Routes(via IP). It can take some time for the load balancers, proxy rules to spin up so give it 5-10 minutes before trying to debug why you cannot connect. 
 
+## Tower configuration 
+
+Create a credential in Tower to connect Tower to your project. Currently using the default compute account but a more restricted IAM user will be added. 
+
+Compute envionrment details:
+
+![Alt text](computeenv.png)
+
+
 
 ## Troubleshooting: 
 
