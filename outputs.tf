@@ -36,6 +36,16 @@ output "MySQL_database" {
   description = "Database ID"
 }
 
+# output "k8s-role-id" {
+#   value       = google_organization_iam_custom_role.k8s-role.id
+#   description = "k8s compute role id"
+# }
+
+# output "k8s-role-name" {
+#   value       = google_organization_iam_custom_role.k8s-role.name
+#   description = "k8s compute role name"
+# }
+
 # output "load_balancer_backend_service" {
 #   value       = google_compute_backend_service.backend_service.id
 #   description = "Load balancer backend service ID"

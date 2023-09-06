@@ -31,8 +31,8 @@ data "google_container_engine_versions" "gke_version" {
 resource "google_container_cluster" "primary" {
   name     = "${var.project_id}-gke"
 
-  #change this to region var.region to get a high avaliblity cluster, ensure you change the location for the node resource as well.
-  location = var.zone
+  #change this to region var.zone to get a zonal cluster, ensure you change the location for the node resource as well.
+  location = var.region
   
   # We can't create a cluster with no node pool defined, but we want to only use
   # separately managed node pools. So we create the smallest possible default
@@ -47,8 +47,8 @@ resource "google_container_cluster" "primary" {
 # Separately Managed Node Pool
 resource "google_container_node_pool" "primary_nodes" {
   name       = google_container_cluster.primary.name
-  #change this to region var.region to get a high avaliblity cluster, ensure you change the location for the cluster resource as well.
-  location = var.zone
+  #change this to region var.zone to get a zonal cluster, ensure you change the location for the cluster resource as well.
+  location = var.region
   cluster    = google_container_cluster.primary.id
   
   version = data.google_container_engine_versions.gke_version.release_channel_latest_version["STABLE"]
@@ -65,7 +65,7 @@ resource "google_container_node_pool" "primary_nodes" {
     }
 
     # preemptible  = true
-    machine_type = "n1-standard-1"
+    machine_type = "n1-standard-2"
     tags         = ["gke-node", "${var.project_id}-gke"]
     metadata = {
       disable-legacy-endpoints = "true"
