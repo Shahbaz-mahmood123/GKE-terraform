@@ -62,6 +62,9 @@ Compute envionrment details:
 ![Alt text](computeenv.png)
 
 
+You can then run a compute and you should see the pods being spun up in the tower.nf namespace:
+![Alt text](compute-success.png)
+
 
 ## Troubleshooting: 
 
@@ -90,7 +93,10 @@ When continously deleting and recreating a cluster the SSD_TOTAL_GB for the comp
 ### WARN: K8s pod cannot be scheduled -- 0/3 nodes are available: 1 Insufficient cpu, 2 node(s) had volume node affinity conflict. preemption: 0/3 nodes are available: 1 No preemption victims found for incoming pod, 2 Preemption is not helpful for scheduling..
 
 
-
+This will occur if you are using smaller machines on the nodes. You can change the machine type to a larger instance to avoid this: 
+```
+machine_type = "n1-standard-4"
+```
 
 ## TODO
 1. Configure HTTPS ingress
