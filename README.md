@@ -63,6 +63,7 @@ Compute envionrment details:
 
 
 You can then run a compute and you should see the pods being spun up in the tower.nf namespace:
+
 ![Alt text](compute-success.png)
 
 
