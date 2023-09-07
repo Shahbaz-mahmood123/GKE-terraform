@@ -5,3 +5,14 @@
 #   description = "A description"
 #   permissions = ["iam.roles.list", "iam.roles.create", "iam.roles.delete", "iam.roles.container.admin"]
 # }
+
+# resource "google_service_account" "tower-compute" {
+#   account_id = "tower-compute"
+#   display_name = "SA"
+# }
+
+# resource "google_project_iam_member" "tower-gke-compute" {
+#   project = var.project_id
+#   role    = "roles/datastore.owner"
+#   member  = "serviceAccount:${google_service_account.tower-compute.email}"
+# }

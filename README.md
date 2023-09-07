@@ -87,6 +87,10 @@ When continously deleting and recreating a cluster the SSD_TOTAL_GB for the comp
 ```
 ![Alt text](quotas.png)
 
+### WARN: K8s pod cannot be scheduled -- 0/3 nodes are available: 1 Insufficient cpu, 2 node(s) had volume node affinity conflict. preemption: 0/3 nodes are available: 1 No preemption victims found for incoming pod, 2 Preemption is not helpful for scheduling..
+
+
+
 
 ## TODO
 1. Configure HTTPS ingress

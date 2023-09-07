@@ -1,26 +1,3 @@
-# Copyright (c) HashiCorp, Inc.
-# SPDX-License-Identifier: MPL-2.0
-
-variable "gke_username" {
-  default     = ""
-  description = "gke username"
-}
-
-variable "gke_password" {
-  default     = ""
-  description = "gke password"
-  sensitive = true
-}
-
-variable "gke_num_nodes" {
-  default     = 1
-  description = "number of gke nodes"
-}
-
-variable "zone" {
-  description = "zone"
-}
-
 # GKE cluster
 data "google_container_engine_versions" "gke_version" {
   location = var.region
