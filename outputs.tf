@@ -33,6 +33,17 @@ output "MySQL_database" {
   description = "Database ID"
 }
 
+output "google_compute_service_account_name" {
+  value = google_service_account.tower-compute.name
+  description = "Compute service account name"
+}
+
+output "google_compute_service_account_id" {
+  value = google_service_account.tower-compute.id
+  description = "Compute service account id"
+}
+
+
 # output "k8s-role-id" {
 #   value       = google_organization_iam_custom_role.k8s-role.id
 #   description = "k8s compute role id"

@@ -49,13 +49,13 @@ Run `terraform apply` and wait for the infrastructure to be provisioned.
 
 Once that has been finished execute the shell script `ApplyManifests.sh`, this will update your KubeConfig and spin up a basic ingress with a flask web app to test connectivity to pods on the cluster using your local machine(Currently using HTTP). 
 
-You should now have access to the Cluster from the command line and you can use Kubectl to interact with it. 
+You should now have access to the Cluster from the command line and you can use Kubectl to interact with it. Additionally a key will be created for the tower service account and will exist in the root directory of this project as a json file.  
 
 To validate a successfull connection you can navigate to your Cluster via the GCP UI. Go to Kubernetes Engine > Services & Ingress > ingress > Select the ingress > Select the link on the Routes(via IP). It can take some time for the load balancers, proxy rules to spin up so give it 5-10 minutes before trying to debug why you cannot connect. 
 
 ## Tower configuration 
 
-Create a credential in Tower to connect Tower to your project. Currently using the default compute account but a more restricted IAM user will be added. 
+Create a credential in Tower to connect Tower to your project. The credential key file will be generated when you run the `ApplyManifests.sh` and you can use that to create the credential. 
 
 Compute envionrment details:
 
